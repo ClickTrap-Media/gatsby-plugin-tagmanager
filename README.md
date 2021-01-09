@@ -47,52 +47,7 @@ module.exports = {
 
 ## Examples of usage
 
-#### Default URL & embedded configuration example
-Usage with the default URL for Klaro and an embedded configuration:
-```javascript
-module.exports = {
-    plugins: [
-        ...
-        {
-            resolve: "gatsby-plugin-tagmanager",
-            options: {
-                includeInDevelopment: true,
-                klaroVersion: "v0.7.11",
-                config: {
-                    privacyPolicy: "/privacy",
-                    apps: [{
-                        name: "google-analytics",
-                        default: true,
-                        title: "Google Analytics",
-                        purposes: ["statistics"],
-                        cookies: [/^ga/i],
-                    },],
-                }
-            }
-        },
-        ...
-    ],
-};
-```
-
-#### Custom URL and external configuration example
-Usage with a custom URL for Klaro and an external configuration located at static/config.js:
-```javascript
-module.exports = {
-    plugins: [
-        ...
-        {
-            resolve: "gatsby-plugin-tagmanager",
-            options: {
-                includeInDevelopment: true,
-                klaroVersion: "v0.7.11",
-                configUrl: "config.js"
-            }
-        },
-        ...
-    ],
-};
-```
+**TBD**
 
 ## How to develop locally
 
