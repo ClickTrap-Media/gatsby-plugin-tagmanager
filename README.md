@@ -43,11 +43,120 @@ module.exports = {
 
 ## Available options
 
-**TBD**
+### `head` (optional, no default value)
+Can be used to add tags to the head of the generated pages.
+The value is an array that contains JSONs in the format specified under `Tag configuration`
+which is a sub heading of `Available options`.
+
+Example value: [{...tag in the defined format}, {...tag in the defined format},]
+
+### `preBody` (optional, no default value)
+Can be used to add tags to the start of the body of the generated pages.
+The value is an array that contains JSONs in the format specified under `Tag configuration`
+which is a sub heading of `Available options`.
+
+Example value: [{...tag in the defined format}, {...tag in the defined format},]
+
+### `postBody` (optional, no default value)
+Can be used to add tags to the end of the body of the generated pages.
+The value is an array that contains JSONs in the format specified under `Tag configuration`
+which is a sub heading of `Available options`.
+
+Example value: [{...tag in the defined format}, {...tag in the defined format},]
+
+### Tag configuration
+
+#### `type` (required)
+The type of the tag. This can be something like `link` or `script` for example.
+
+Example value: "link"
+
+#### `name` (optional)
+A internal name that can be set. Has to be unique and can collide with other values on the page
+if a wrong value is set. This value is used as the `key` of the React component.
+
+Example value: "my-script"
+
+#### `attributes` (optional)
+The attributes that should be set on the tag. Has to be in JSON format.
+Can be used for things like defining the type of a script and other common HTML attributes.
+
+Example value:
+```javascript
+{
+    type: "text/css",
+    rel: "stylesheet"
+}
+```
+
+#### `content` (optional, cannot be used together with `dangerousContent`)
+The content to put into the tag. Note that this content is being escaped properly and is safe to use.
+Note: Cannot be used to insert JavaScript into an script tag. You should use `dangerousContent` for that.
+
+Example value: "Hello World!"
+
+#### `dangerousContent` (optional, cannot be used together with `content`)
+Allows to insert some custom HTML as content for an tag. Can be used for example to include some external JavaScript snippet.
+Note that if `dangerousContent` and `content` is set, `content` is the property that will be used and overwrite this property.
+
+Example value: "console.log('Hello World!');"
 
 ## Examples of usage
 
-**TBD**
+### Usage without content
+```javascript
+{
+    resolve: "../gatsby-plugin-tagmanager",
+    options: {
+        head: [
+            {
+                type: "link",
+                name: "some-css",
+                attributes: {
+                    type: "text/javascript",
+                    "data-somedata": "MyData",
+                    href: "/my.css"
+                },
+            }
+        ]
+    }
+},
+```
+
+### Usage with content
+```javascript
+{
+    resolve: "../gatsby-plugin-tagmanager",
+    options: {
+        preBody: [
+            {
+                type: "h1",
+                name: "some-h1",
+                content: "This is my website!"
+            }
+        ]
+    }
+},
+```
+
+### Usage with dangerousContent
+```javascript
+{
+    resolve: "../gatsby-plugin-tagmanager",
+    options: {
+        preBody: [
+            {
+                type: "script",
+                name: "custom-script",
+                attributes: {
+                    type: "text/javascript"
+                }
+                dangerousContent: "console.log('Hello World');"
+            }
+        ]
+    }
+},
+```
 
 ## How to develop locally
 
