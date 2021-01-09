@@ -106,7 +106,7 @@ Example value: "console.log('Hello World!');"
 ### Usage without content
 ```javascript
 {
-    resolve: "../gatsby-plugin-tagmanager",
+    resolve: "gatsby-plugin-tagmanager",
     options: {
         head: [
             {
@@ -126,7 +126,7 @@ Example value: "console.log('Hello World!');"
 ### Usage with content
 ```javascript
 {
-    resolve: "../gatsby-plugin-tagmanager",
+    resolve: "gatsby-plugin-tagmanager",
     options: {
         preBody: [
             {
