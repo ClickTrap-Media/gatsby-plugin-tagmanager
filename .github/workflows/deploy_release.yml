@@ -44,7 +44,7 @@ jobs:
         git_tag_prefix: "v"
 
     - name: Changelog
-      uses: scottbrenner/generate-changelog-action@master
+      uses: Bullrich/generate-release-changelog@master
       id: Changelog
       env:
         REPO: ${{ github.repository }}
