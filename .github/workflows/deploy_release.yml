@@ -44,7 +44,7 @@ jobs:
         git_tag_prefix: "v"
 
     - name: Changelog
-      uses: scottbrenner/generate-changelog-action@master
+      uses: Bullrich/generate-release-changelog@master
       id: Changelog
       env:
         REPO: ${{ github.repository }}
@@ -80,7 +80,7 @@ jobs:
         path: coverage
 
     - name: Package artifact
-      run: zip -r gatsby-plugin-klaro-v${{ env.PACKAGE_VERSION }}.zip .
+      run: zip -r gatsby-plugin-tagmanager-v${{ env.PACKAGE_VERSION }}.zip .
 
     - name: Upload artifact
       id: upload-release-asset
