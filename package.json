@@ -1,6 +1,6 @@
 {
     "name": "gatsby-plugin-tagmanager",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Add custom tags in the head of your Gatsby page with ease",
     "keywords": [
         "gatsby",
@@ -9,15 +9,15 @@
         "tag",
         "manager"
     ],
-    "author": "ClickTrap Media <contact@clicktrap-media.de>",
+    "author": "Lazy Bytez <p.zarrad@outlook.de>",
     "license": "MIT",
-    "homepage": "https://github.com/ClickTrap-Media/gatsby-plugin-tagmanager",
+    "homepage": "https://github.com/lazybytez/gatsby-plugin-tagmanager",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ClickTrap-Media/gatsby-plugin-tagmanager.git"
+        "url": "git+https://github.com/lazybytez/gatsby-plugin-tagmanager.git"
     },
     "bugs": {
-        "url": "https://github.com/ClickTrap-Media/gatsby-plugin-tagmanager/issues"
+        "url": "https://github.com/lazybytez/gatsby-plugin-tagmanager/issues"
     },
     "main": "index.js",
     "private": false,
