@@ -80,7 +80,7 @@ jobs:
         path: coverage
 
     - name: Package artifact
-      run: zip -r gatsby-plugin-klaro-v${{ env.PACKAGE_VERSION }}.zip .
+      run: zip -r gatsby-plugin-tagmanager-v${{ env.PACKAGE_VERSION }}.zip .
 
     - name: Upload artifact
       id: upload-release-asset
